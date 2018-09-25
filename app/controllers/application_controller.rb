@@ -43,3 +43,23 @@ class ApplicationController < Sinatra::Base
   end
 
 end
+
+
+
+
+
+
+
+
+
+  get '/signup' do
+    erb: "/signup"
+  end
+
+  post '/signup' do
+    @user = User.new
+    @user.user_name = params[:user_name]
+    @user.password = params[:password]
+    @user.email = params[:email]
+    @user.save
+  end
